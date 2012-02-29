@@ -1,0 +1,5 @@
+sfGuardUser:
+  columns:
+    email_guid:
+      type: string(20)
+      index: true
