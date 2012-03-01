@@ -129,7 +129,7 @@ EOF;
         {
           $options['title'] = $subject;
         }
-        $result = $table->addFileAsMediaItem($file);
+        $result = $table->addFileAsMediaItem($file, $options);
         unlink($file);
       }
     } 

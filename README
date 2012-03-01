@@ -1,0 +1,8 @@
+This plugin accepts media by email and adds them to the media library if the "to:" address
+is right. See the task's help message for documentation.
+
+IOU: there's some project level stuff that needs to be refactored here but I've got to put
+this down for the day (:
+
+Bug me about it tom@punkave.com
+
