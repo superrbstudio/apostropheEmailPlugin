@@ -2,4 +2,7 @@ sfGuardUser:
   columns:
     email_guid:
       type: string(20)
-      index: true
+  indexes:
+    email_guid_index:
+      fields:
+        - email_guid

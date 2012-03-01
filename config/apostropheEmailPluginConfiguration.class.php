@@ -14,10 +14,14 @@ class apostropheEmailPluginConfiguration extends sfPluginConfiguration
     if (!self::$registered)
     {
       $this->dispatcher->connect('a.migrateSchemaAdditions', array($this, 'migrateListener'));
+      $this->dispatcher->connect('doctrine.configure_connection', array($this, 'doctrineConfigureConnectionListener'));
 
       self::$registered = true;
     }
+  }
 
+  public function doctrineConfigureConnectionListener($event)
+  {
     // Adds a preInsert listener that ensures every user gets an email guid
     $table = Doctrine::getTable('sfGuardUser');
     $table->addListener(new apostropheEmailGuidListener());
