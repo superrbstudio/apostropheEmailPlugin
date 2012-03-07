@@ -81,7 +81,7 @@ EOF;
         $headers = $info['headers'];
         $to = $headers['to'];
         $subject = isset($headers['subject']) ? $headers['subject'] : '';
-        if (!preg_match('/([A-Za-z0-9\-]+)\+([0-9a-f]+)@/', $to, $matches))
+        if (!preg_match('/([A-Za-z0-9\-]+)\+(\w+)@/', $to, $matches))
         {
           // Silently ignore spam and other irrelevancies
           return;
