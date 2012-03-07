@@ -13,11 +13,10 @@ class apostropheEmailGuidListener extends Doctrine_EventListener
 	{
 		// TODO: figure out why this doesn't work. For now you have to add your own preInsert hook
 		// that does this simple thing, not a huge deal
-		error_log("preInsert");
 		$user = $event->getInvoker();
 		if (is_null($user->getEmailGuid()))
 		{
-			$user->setEmailGuid(aGuid::generate());
+			$user->setEmailGuid(apostropheEmailTools::generateGuid());
 		}
 	}
 }
